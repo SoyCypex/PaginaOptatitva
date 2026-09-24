@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Warframe: Guía Táctica de Mecánicas, Daño y Supervivencia</title>
+  <meta name="description" content="Guía interactiva de mecánicas de Warframe: sistemas de supervivencia, tipos de daño físico y elemental, combinador interactivo y estrategias contra facciones.">
+  
+  <!-- Tipografías de Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rajdhani:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Hoja de Estilos Externa -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Barra de Navegación Superior -->
+  <header class="top-nav">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <span class="nav-logo-badge">TENNO</span>
+        <span class="nav-logo-text">WARFRAME • GUÍA TÁCTICA</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#supervivencia">Supervivencia</a>
+        <a href="#danos">Tipos de Daño</a>
+        <a href="#combinador">Combinador</a>
+        <a href="#facciones">Facciones</a>
+        <a href="#parkour">Parkour & Modding</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <span class="hero-badge">⚡ SISTEMA DE COMBATE ACTUALIZADO</span>
+      <h1>Domina las Mecánicas del Sistema Origen</h1>
+      <p class="hero-lead">
+        Desde las capas defensivas como <strong>Shield Gating</strong>, <strong>Invisibilidad</strong> y <strong>Overguard</strong>, hasta el cálculo de estados elementales como <strong>Heat</strong>, <strong>Viral</strong> y <strong>Corrosivo</strong>.
+      </p>
+
+      <div class="hero-search">
+        <input type="text" id="searchInput" placeholder="Buscar mecánica (ej: Invisibilidad, Heat, Viral, Escudos)..." aria-label="Buscar mecánicas">
+      </div>
+
+      <div class="hero-stats">
+        <div class="hero-stat-item">
+          <h4>7+</h4>
+          <p>Capas de Supervivencia</p>
+        </div>
+        <div class="hero-stat-item">
+          <h4>13</h4>
+          <p>Tipos de Daño & Estados</p>
+        </div>
+        <div class="hero-stat-item">
+          <h4>100%</h4>
+          <p>Estrategia Aplicada</p>
+        </div>
+        <div class="hero-stat-item">
+          <h4>Jade Shadows</h4>
+          <p>Rework de Daño al Día</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 1: SUPERVIVENCIA -->
+    <section id="supervivencia" class="searchable-section">
+      <div class="section-header">
+        <span class="section-tag">Defensa y Mitigación</span>
+        <h2 class="section-title">Mecánicas de Supervivencia</h2>
+        <p class="section-desc">
+          En Warframe, tener mucha vida no basta en niveles altos (Steel Path). El juego funciona mediante capas defensivas activas y pasivas.
+        </p>
+      </div>
+
+      <!-- Filtros rápidos para Supervivencia -->
+      <div class="filter-tags">
+        <button class="filter-btn active" onclick="filterCards('all', 'supervivencia', event)">Todas las mecánicas</button>
+        <button class="filter-btn" onclick="filterCards('evasion', 'supervivencia', event)">Sigilo e Inmunidad</button>
+        <button class="filter-btn" onclick="filterCards('aguante', 'supervivencia', event)">Tanque y Escudos</button>
+        <button class="filter-btn" onclick="filterCards('control', 'supervivencia', event)">Control de Masas</button>
+      </div>
+
+      <h3 class="sub-title">1. Evasión, Inmunidad y Sigilo</h3>
+      <div class="cards-grid">
+        <!-- Invisibilidad -->
+        <article class="card gold-border" data-category="evasion">
+          <div class="card-head">
+            <h4 class="card-title">👁️ Invisibilidad</h4>
+            <span class="card-badge">Sigilo</span>
+          </div>
+          <p>
+            Los enemigos pierden tu rastro por completo y dejan de dispararte. Además, los ataques cuerpo a cuerpo sin alertar reciben un multiplicador crítico de <strong>x8 de daño sigiloso</strong>.
+          </p>
+          <div class="card-footer">
+            <strong>Warframes clave:</strong>
+            <span class="warframe-pill">Loki</span>
+            <span class="warframe-pill">Ivara</span>
+            <span class="warframe-pill">Ash</span>
+            <span class="warframe-pill">Octavia</span>
+          </div>
+        </article>
+
+        <!-- Invulnerabilidad -->
+        <article class="card" data-category="evasion">
+          <div class="card-head">
+            <h4 class="card-title">⭐ Invulnerabilidad</h4>
+            <span class="card-badge">Inmunidad Total</span>
+          </div>
+          <p>
+            Anula el <strong>100% del daño entrante</strong> y los efectos de estado durante un tiempo o por cargas activas. Ideal para misiones de nivel extremo o jefes.
+          </p>
+          <div class="card-footer">
+            <strong>Warframes clave:</strong>
+            <span class="warframe-pill">Revenant (Mesmer Skin)</span>
+            <span class="warframe-pill">Valkyr (Hysteria)</span>
+            <span class="warframe-pill">Nyx (Absorb)</span>
+            <span class="warframe-pill">Modo Vacío (Operador)</span>
+          </div>
+        </article>
+
+        <!-- Shield Gating -->
+        <article class="card blue-border" data-category="aguante">
+          <div class="card-head">
+            <h4 class="card-title">🛡️ Shield Gating</h4>
+            <span class="card-badge">Mecánica Vital</span>
+          </div>
+          <p>
+            Cuando tus escudos caen a <strong>0</strong>, se activa una ventana de <strong>invulnerabilidad de hasta 2.5 segundos</strong> (según tus escudos máximos). Evita que cualquier golpe te mate de un tiro (One-Shot protection).
+          </p>
+          <div class="card-footer">
+            <strong>Consejo:</strong> Usa el mod <em>Catalyzing Shields</em> o recarga escudos con <em>Brief Respite</em> y habilidades para reiniciar la ventana.
+          </div>
+        </article>
+
+        <!-- Sobreguardia (Overguard) -->
+        <article class="card overguard-border" data-category="aguante">
+          <div class="card-head">
+            <h4 class="card-title">💠 Sobreguardia</h4>
+            <span class="card-badge">Escudo Élite</span>
+          </div>
+          <p>
+            Una barra defensiva azulada que absorbe daño y te otorga <strong>inmunidad absoluta a estados, derribos y tambaleos</strong>. Cuando se rompe, otorga 0.5s de invulnerabilidad.
+          </p>
+          <div class="card-footer">
+            <strong>Warframes clave:</strong>
+            <span class="warframe-pill">Rhino (Iron Skin)</span>
+            <span class="warframe-pill">Dante</span>
+            <span class="warframe-pill">Kullervo</span>
+            <span class="warframe-pill">Frost</span>
+            <span class="warframe-pill">Styanax</span>
+          </div>
+        </article>
+      </div>
+
+      <h3 class="sub-title">2. Resistencia por Armadura y Mitigación</h3>
+      <div class="cards-grid">
+        <!-- Armadura y Salud -->
+        <article class="card red-border" data-category="aguante">
+          <div class="card-head">
+            <h4 class="card-title">🦾 Armadura & Salud</h4>
+            <span class="card-badge">EHP Puro</span>
+          </div>
+          <p>
+            La armadura reduce porcentualmente el daño recibido a la salud con la fórmula: <code>Reducción = Armadura / (Armadura + 300)</code>. Con 2700 de armadura reduces el 90% del daño entrante.
+          </p>
+          <div class="card-footer">
+            <strong>Warframes clave:</strong>
+            <span class="warframe-pill">Inaros</span>
+            <span class="warframe-pill">Nidus</span>
+            <span class="warframe-pill">Chroma</span>
+            <span class="warframe-pill">Lavos</span>
+          </div>
+        </article>
+
+        <!-- Reducción de Daño Porcentual (DR) -->
+        <article class="card purple-border" data-category="aguante">
+          <div class="card-head">
+            <h4 class="card-title">🛡️ Reducción de Daño (DR)</h4>
+            <span class="card-badge">Multiplicador</span>
+          </div>
+          <p>
+            Habilidades y mods que aplican una reducción fija (hasta 90-95%) al daño final, multiplicándose con la armadura para conseguir una resistencia gigantesca.
+          </p>
+          <div class="card-footer">
+            <strong>Ejemplos:</strong>
+            <span class="warframe-pill">Gara (90%)</span>
+            <span class="warframe-pill">Mesa (95% disparos)</span>
+            <span class="warframe-pill">Trinity (75%)</span>
+            <span class="warframe-pill">Mod Adaptación (90%)</span>
+          </div>
+        </article>
+
+        <!-- Evasión y Parkour -->
+        <article class="card" data-category="evasion">
+          <div class="card-head">
+            <h4 class="card-title">🤸 Rodar y Maniobras</h4>
+            <span class="card-badge">Pasivo</span>
+          </div>
+          <p>
+            Hacer una rodada (Roll) te otorga un <strong>75% de reducción de daño innato</strong> durante la animación y reduce la precisión de los disparos enemigos un 50%.
+          </p>
+          <div class="card-footer">
+            <strong>Mod recomendado:</strong> <em>Rolling Guard</em> (otorga 3s de invulnerabilidad al rodar).
+          </div>
+        </article>
+
+        <!-- Control de Masas (CC) -->
+        <article class="card green-border" data-category="control">
+          <div class="card-head">
+            <h4 class="card-title">🌀 Control de Masas</h4>
+            <span class="card-badge">CC Táctico</span>
+          </div>
+          <p>
+            Aturdir, congelar, cegar o ralentizar a los enemigos impide que ataquen. El mejor escudo es que el enemigo no pueda disparar.
+          </p>
+          <div class="card-footer">
+            <strong>Warframes clave:</strong>
+            <span class="warframe-pill">Vauban (Bastille)</span>
+            <span class="warframe-pill">Sevagoth (Gloom)</span>
+            <span class="warframe-pill">Khora</span>
+            <span class="warframe-pill">Nova</span>
+          </div>
+        </article>
+      </div>
+
+      <!-- Banner Informativo Destacado -->
+      <div class="mechanic-banner">
+        <div class="mechanic-icon">💡</div>
+        <div class="mechanic-content">
+          <h4>Regla de Oro de Supervivencia Tenno</h4>
+          <p>
+            No te quedes quieto. Moverse en el aire (Bullet Jump + Aim Glide + Rodar) reduce drásticamente la puntería enemiga. Combina siempre <strong>movilidad constante</strong> con la capa defensiva principal de tu Warframe.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 2: TIPOS DE DAÑO Y ESTADOS -->
+    <section id="danos" class="searchable-section">
+      <div class="section-header">
+        <span class="section-tag">Arsenal y Efectos de Estado</span>
+        <h2 class="section-title">Tipos de Daño & Efectos de Estado (Procs)</h2>
+        <p class="section-desc">
+          Cada tipo de daño tiene un efecto secundario garantizado cuando activas su <strong>Probabilidad de Estado</strong>. Comprender cómo interactúan es la clave para derrotar cualquier enemigo.
+        </p>
+      </div>
+
+      <h3 class="sub-title">1. Daño Físico (IPS)</h3>
+      <div class="cards-grid">
+        <article class="card red-border">
+          <div class="card-head">
+            <h4 class="card-title" style="color: var(--c-slash)">🗡️ Corte (Slash)</h4>
+            <span class="card-badge">DoT Verdadero</span>
+          </div>
+          <p>
+            Aplica <strong>Sangrado</strong> durante 6 segundos. Este daño periódico es <strong>Daño Verdadero (True Damage)</strong>, lo que significa que <strong>ignora por completo el 100% de la armadura enemiga</strong>.
+          </p>
+          <div class="card-footer"><strong>Eficacia:</strong> Devastador contra Grineer acorazados.</div>
+        </article>
+
+        <article class="card">
+          <div class="card-head">
+            <h4 class="card-title" style="color: var(--c-puncture)">🏹 Perforación (Puncture)</h4>
+            <span class="card-badge">Debilitación</span>
+          </div>
+          <p>
+            Reduce el daño infligido por el enemigo hasta un <strong>80%</strong> y otorga hasta un <strong>+25% de probabilidad crítica plana</strong> contra ese objetivo acumulando hasta 5 marcas.
+          </p>
+          <div class="card-footer"><strong>Eficacia:</strong> Ideal para debilitar jefes o enemigos pesados.</div>
+        </article>
+
+        <article class="card">
+          <div class="card-head">
+            <h4 class="card-title" style="color: var(--c-impact)">🔨 Impacto (Impact)</h4>
+            <span class="card-badge">Aturdimiento</span>
+          </div>
+          <p>
+            Tambalea al enemigo y eleva el umbral de salud para poder ejecutar un remate instantáneo con el <strong>Parazon (Mercy Kill)</strong> hasta un 40% de vida.
+          </p>
+          <div class="card-footer"><strong>Eficacia:</strong> Muy útil para remates y escudos menores.</div>
+        </article>
+      </div>
+
+      <h3 class="sub-title">2. Elementales Primarios</h3>
+      <div class="cards-grid">
+        <article class="card" style="border-left-color: var(--c-heat)">
+          <div class="card-head">
+            <h4 class="card-title" style="color: var(--c-heat)">🔥 Calor (Heat)</h4>
+            <span class="card-badge">Pánico + Strip</span>
+          </div>
+          <p>
+            Prende fuego al objetivo causando daño continuo (DoT) que se acumula infinitamente, provoca pánico (el enemigo deja de disparar) y <strong>reduce su armadura un 50%</strong> tras 1 segundo.
+          </p>
+          <div class="card-footer"><strong>Eficacia:</strong> Excelente contra Carne, Infestados y para reducir armadura.</div>
+        </article>
+
+        <article class="card" style="border-left-color: var(--c-cold)">
+          <div class="card-head">
+            <h4 class="card-title" style="color: var(--c-cold)">❄️ Frío (Cold)</h4>
+            <span class="card-badge">Congelación + Crítico</span>
+          </div>
+          <p>
+            Ralentiza la velocidad enemiga hasta un 85%. Al llegar a 10 acumulaciones, congela totalmente al enemigo y <strong>aumenta el multiplicador de daño crítico recibido hasta un +100%</strong>.
+          </p>
+          <div class="card-footer"><strong>Eficacia:</strong> Control de masas y multiplicador masivo de daño crítico.</div>
+        </article>
+
+        <article class="card" style="border-left-color: var(--c-elec)">
+          <div class="card-head">
+            <h4 class="card-title" style="color: var(--c-elec)">⚡ Electricidad</h4>
+            <span class="card-badge">Arco Eléctrico</span>
+          </div>
+          <p>
+            Aturde al objetivo en el sitio y descarga arcos eléctricos continuos a todos los enemigos cercanos en un radio de 3 metros (daño AoE en cadena).
+          </p>
+          <div class="card-footer"><strong>Eficacia:</strong> Fuerte contra maquinaria Corpus y grupos compactos.</div>
+        </article>
+
+        <article class="card" style="border-left-color: var(--c-toxin)">
+          <div class="card-head">
+            <h4 class="card-title" style="color: var(--c-toxin)">☣️ Toxina (Toxin)</h4>
+            <span class="card-badge">Bypass de Escudo</span>
+          </div>
+          <p>
+            Aplica un veneno DoT acumulativo que <strong>atraviesa e ignora al 100% los escudos de los Corpus</strong>, dañando directamente su barra de salud.
+          </p>
+          <div class="card-footer"><strong>Eficacia:</strong> El contraataque supremo contra la facción Corpus.</div>
+        </article>
+      </div>
+
+      <h3 class="sub-title">3. Elementales Compuestos (Combinaciones)</h3>
+      <div class="cards-grid">
+        <article class="card" style="border-left-color: var(--c-viral)">
+          <div class="card-head">
+            <h4 class="card-title" style="color: var(--c-viral)">🦠 Viral (Frío + Toxina)</h4>
+            <span class="card-badge">Amplificador de Salud</span>
+          </div>
+          <p>
+            Aumenta todo el daño que recibe la salud del objetivo: <strong>+100% de daño</strong> con la primera acumulación y hasta <strong>+325% con 10 acumulaciones</strong>. El meta de casi cualquier arma.
+          </p>
+        </article>
+
+        <article class="card" style="border-left-color: var(--c-corrosive)">
+          <div class="card-head">
+            <h4 class="card-title" style="color: var(--c-corrosive)">🧪 Corrosivo (Elec + Toxina)</h4>
+            <span class="card-badge">Destructor de Armadura</span>
+          </div>
+          <p>
+            Disuelve la armadura enemiga permanentemente: reduce un 26% en el primer estado y hasta un <strong>80% con 10 acumulaciones</strong> (o 100% con mods de proyección/arcanos).
+          </p>
+        </article>
+
+        <article class="card" style="border-left-color: var(--c-radiation)">
+          <div class="card-head">
+            <h4 class="card-title" style="color: var(--c-radiation)">☢️ Radiación (Calor + Elec)</h4>
+            <span class="card-badge">Fuego Amigo</span>
+          </div>
+          <p>
+            Confunde al enemigo, haciendo que ataque a sus propios aliados y aumentando el daño que recibe de ellos hasta un +550%. Excelente para distraer a unidades peligrosas.
+          </p>
+        </article>
+
+        <article class="card" style="border-left-color: var(--c-magnetic)">
+          <div class="card-head">
+            <h4 class="card-title" style="color: var(--c-magnetic)">🧲 Magnético (Frío + Elec)</h4>
+            <span class="card-badge">Anti-Escudo / Overguard</span>
+          </div>
+          <p>
+            Aumenta el daño infligido a <strong>Escudos y Sobreguardia (Overguard) hasta un +325%</strong> e impide que los escudos enemigos comiencen a regenerarse. Al romperse el escudo, explota en área.
+          </p>
+        </article>
+
+        <article class="card" style="border-left-color: var(--c-gas)">
+          <div class="card-head">
+            <h4 class="card-title" style="color: var(--c-gas)">☁️ Gas (Calor + Toxina)</h4>
+            <span class="card-badge">Nube Tóxica AoE</span>
+          </div>
+          <p>
+            Genera una nube persistente de 3 a 6 metros que inflige daño continuo a todos los enemigos que entren en ella durante 6 segundos.
+          </p>
+        </article>
+
+        <article class="card" style="border-left-color: var(--c-blast)">
+          <div class="card-head">
+            <h4 class="card-title" style="color: var(--c-blast)">💥 Explosión (Calor + Frío)</h4>
+            <span class="card-badge">Detonación AoE</span>
+          </div>
+          <p>
+            Cada impacto acumula un temporizador de detonación. Al alcanzar 10 cargas o al morir el enemigo, <strong>detona una explosión de 5 metros</strong> haciendo el 100% del daño acumulado a todos los enemigos adyacentes.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 3: COMBINADOR INTERACTIVO DE ELEMENTOS -->
+    <section id="combinador">
+      <div class="section-header">
+        <span class="section-tag">Laboratorio Táctico</span>
+        <h2 class="section-title">Combinador Interactivo de Elementos</h2>
+        <p class="section-desc">
+          Haz clic en <strong>dos elementos primarios</strong> para ver qué tipo de daño compuesto se crea y aprender cómo funciona su sinergia en combate.
+        </p>
+      </div>
+
+      <div class="combiner-container">
+        <div class="element-select-grid" id="elementButtons">
+          <button class="element-btn" data-el="Calor" onclick="toggleElement('Calor')">
+            <span class="icon">🔥</span>
+            <span>Calor (Heat)</span>
+          </button>
+          <button class="element-btn" data-el="Frío" onclick="toggleElement('Frío')">
+            <span class="icon">❄️</span>
+            <span>Frío (Cold)</span>
+          </button>
+          <button class="element-btn" data-el="Electricidad" onclick="toggleElement('Electricidad')">
+            <span class="icon">⚡</span>
+            <span>Electricidad</span>
+          </button>
+          <button class="element-btn" data-el="Toxina" onclick="toggleElement('Toxina')">
+            <span class="icon">☣️</span>
+            <span>Toxina</span>
+          </button>
+        </div>
+
+        <div class="combiner-result" id="combinerResult">
+          <p class="combiner-empty">Selecciona dos elementos de la lista superior para combinarlos.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 4: SIMULADOR DE FACCIONES -->
+    <section id="facciones">
+      <div class="section-header">
+        <span class="section-tag">Estrategia Contra el Enemigo</span>
+        <h2 class="section-title">Matriz Táctica por Facción</h2>
+        <p class="section-desc">
+          Selecciona una facción enemiga para conocer su principal capa defensiva y qué combinación de daño es la más efectiva para aniquilarlos.
+        </p>
+      </div>
+
+      <div class="faction-grid">
+        <button class="faction-btn active" onclick="selectFaction('grineer', event)">
+          <h4>🪖 Grineer</h4>
+          <span>Armadura Pesada (Ferrite / Alloy)</span>
+        </button>
+        <button class="faction-btn" onclick="selectFaction('corpus', event)">
+          <h4>🤖 Corpus</h4>
+          <span>Escudos de Alta Tecnología & Robótica</span>
+        </button>
+        <button class="faction-btn" onclick="selectFaction('infested', event)">
+          <h4>🧟 Infestados</h4>
+          <span>Hordas Biológicas y Carne Fósil</span>
+        </button>
+        <button class="faction-btn" onclick="selectFaction('murmur', event)">
+          <h4>👁️ El Susurro / Murmur</h4>
+          <span>Constructos de la Indiferencia</span>
+        </button>
+        <button class="faction-btn" onclick="selectFaction('eximus', event)">
+          <h4>💠 Eximus & Sentients</h4>
+          <span>Sobreguardia y Adaptación</span>
+        </button>
+      </div>
+
+      <!-- Paneles de Facción -->
+      <div class="faction-panel active" id="panel-grineer">
+        <div class="combo-formula">
+          <span>Estrategia recomendada:</span>
+          <span class="combo-name" style="color: var(--c-viral)">🦠 Viral + 🗡️ Corte (Slash)</span>
+          <span>o</span>
+          <span class="combo-name" style="color: var(--c-corrosive)">🧪 Corrosivo + 🔥 Calor</span>
+        </div>
+        <div class="combo-details">
+          <div class="combo-box">
+            <h5>¿Por qué funciona?</h5>
+            <p>La armadura Grineer reduce enormemente el daño recibido. El daño de <strong>Corte</strong> aplica sangrado que ignora el 100% de la armadura, mientras que <strong>Viral</strong> amplifica ese daño a la salud hasta un +325%.</p>
+          </div>
+          <div class="combo-box">
+            <h5>Alternativa de Armadura</h5>
+            <p><strong>Corrosivo</strong> despoja el 80% de su armadura y <strong>Calor</strong> resta el 50% del restante, dejándolos casi vulnerables a cualquier disparo.</p>
+          </div>
+          <div class="combo-box">
+            <h5>Debilidades Clave</h5>
+            <p>Ferrite Armor es débil a <em>Corrosivo</em>. Alloy Armor (Bombarderos) es débil a <em>Radiación</em> y <em>Frío</em>.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faction-panel" id="panel-corpus">
+        <div class="combo-formula">
+          <span>Estrategia recomendada:</span>
+          <span class="combo-name" style="color: var(--c-toxin)">☣️ Toxina Pura</span>
+          <span>o</span>
+          <span class="combo-name" style="color: var(--c-magnetic)">🧲 Magnético + 🔥 Calor</span>
+        </div>
+        <div class="combo-details">
+          <div class="combo-box">
+            <h5>¿Por qué funciona?</h5>
+            <p>Los Corpus tienen enormes capas de escudos azules. El estado de <strong>Toxina pura</strong> atraviesa los escudos directamente a la salud, matando a los soldados de 1 o 2 disparos sin tocar sus escudos.</p>
+          </div>
+          <div class="combo-box">
+            <h5>Robótica y Moas</h5>
+            <p>Para la maquinaria robótica con escudos masivos, <strong>Magnético</strong> anula la recarga y multiplica el daño a escudos por +325%.</p>
+          </div>
+          <div class="combo-box">
+            <h5>Debilidades Clave</h5>
+            <p>Proto-Shields son débiles a <em>Toxina</em> y <em>Magnético</em>. Robótica sufre contra <em>Electricidad</em> y <em>Radiación</em>.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faction-panel" id="panel-infested">
+        <div class="combo-formula">
+          <span>Estrategia recomendada:</span>
+          <span class="combo-name" style="color: var(--c-heat)">🔥 Calor</span>
+          <span>+</span>
+          <span class="combo-name" style="color: var(--c-corrosive)">🧪 Corrosivo</span>
+          <span>o</span>
+          <span class="combo-name" style="color: var(--c-gas)">☁️ Gas</span>
+        </div>
+        <div class="combo-details">
+          <div class="combo-box">
+            <h5>¿Por qué funciona?</h5>
+            <p>Los Infestados atacan en grandes hordas cuerpo a cuerpo sin escudos. El daño de <strong>Gas</strong> y <strong>Calor</strong> crea nubes y fuegos continuos en área (AoE) que erradican grupos enteros al instante.</p>
+          </div>
+          <div class="combo-box">
+            <h5>Infestados Antiguos (Fossilized)</h5>
+            <p>Los enemigos gigantes (Antiguos sanadores/disruptores) tienen armadura fósil altamente vulnerable a <strong>Corrosivo (+75%)</strong>.</p>
+          </div>
+          <div class="combo-box">
+            <h5>Debilidades Clave</h5>
+            <p>Carne infestada sufre daño masivo ante <em>Calor</em>, <em>Corte</em> y <em>Gas</em>.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faction-panel" id="panel-murmur">
+        <div class="combo-formula">
+          <span>Estrategia recomendada:</span>
+          <span class="combo-name" style="color: var(--c-radiation)">☢️ Radiación</span>
+          <span>+</span>
+          <span class="combo-name" style="color: var(--c-elec)">⚡ Electricidad</span>
+          <span>o</span>
+          <span class="combo-name" style="color: var(--c-cold)">❄️ Frío</span>
+        </div>
+        <div class="combo-details">
+          <div class="combo-box">
+            <h5>¿Por qué funciona?</h5>
+            <p>Las criaturas del Vacío y los Constructos de Albrecht Entrati tienen tipos de defensa especiales que sufren bonificaciones enormes directas al daño de <strong>Radiación (+75%)</strong> y <strong>Electricidad</strong>.</p>
+          </div>
+          <div class="combo-box">
+            <h5>Inmunidades Parciales</h5>
+            <p>Son muy resistentes a Viral; por ello cambiar a Radiación o Electricidad directa triplica el daño por segundo.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faction-panel" id="panel-eximus">
+        <div class="combo-formula">
+          <span>Estrategia recomendada:</span>
+          <span class="combo-name" style="color: var(--c-magnetic)">🧲 Magnético</span>
+          <span>+</span>
+          <span class="combo-name">🌌 Daño del Vacío (Operador)</span>
+        </div>
+        <div class="combo-details">
+          <div class="combo-box">
+            <h5>¿Cómo vencer la Sobreguardia?</h5>
+            <p>Las unidades Eximus poseen <strong>Overguard</strong> inmune a control de masas (CC). El daño <strong>Magnético</strong> inflige un +325% de daño directo a la Sobreguardia, rompiéndola al instante.</p>
+          </div>
+          <div class="combo-box">
+            <h5>Sentients y Adaptación</h5>
+            <p>Los Sentients desarrollan resistencia al tipo de daño que reciben. Dispararles con el <strong>Rayo del Operador (Modo Vacío)</strong> reinicia todas sus resistencias inmediatamente.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 5: PARKOUR & COMBATE AVANZADO -->
+    <section id="parkour" class="searchable-section">
+      <div class="section-header">
+        <span class="section-tag">Movilidad Ninja</span>
+        <h2 class="section-title">Parkour 2.0 y Modding Básico</h2>
+        <p class="section-desc">
+          El movimiento no es solo para avanzar rápido: es tu mejor herramienta defensiva y ofensiva.
+        </p>
+      </div>
+
+      <div class="cards-grid">
+        <article class="card">
+          <div class="card-head">
+            <h4 class="card-title">🚀 Cadena de Salto Bala (Bullet Jump)</h4>
+            <span class="card-badge">Movilidad</span>
+          </div>
+          <p>
+            <strong>Agacharse + Saltar</strong> hacia donde apuntas la mira realiza un potente impulso. Puedes encadenar: <em>Bullet Jump → Doble Salto → Rodar (Roll) en el aire → Deslizar al aterrizar</em> para moverte a velocidad máxima sin recibir daño.
+          </p>
+          <div class="card-footer"><strong>Consejo:</strong> Mantener presionado apuntar en el aire activa <em>Aim Glide</em> (planeo con baja gravedad).</div>
+        </article>
+
+        <article class="card gold-border">
+          <div class="card-head">
+            <h4 class="card-title">⚔️ La Fórmula de Daño en Modding</h4>
+            <span class="card-badge">Modding</span>
+          </div>
+          <p>
+            Para multiplicar tu daño al máximo, nunca apiles mods del mismo tipo. El daño total se calcula multiplicando categorías distintas:
+            <br><br>
+            <code>Daño Total = Daño Base × Multidisparo × Crítico (Prob × Daño) × Daño Elemental × Daño de Facción</code>
+          </p>
+          <div class="card-footer"><strong>Consejo:</strong> Un mod elemental + un mod crítico rinde 4x más que dos mods elementales juntos.</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-note">
+        <strong>Guía Táctica de Warframe</strong> • Desarrollada con estándares modernos de la comunidad Tenno. Los valores y fórmulas reflejan los sistemas de daño actualizados.
+      </div>
+      <div>
+        <span>Desarrollado para el Sistema Origen • 2026</span>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Script JavaScript Externo -->
+  <script src="js/app.js"></script>
+</body>
+</html>
